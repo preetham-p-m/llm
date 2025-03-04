@@ -1,0 +1,31 @@
+{
+  "cSpell.words": [
+    "beautifulsoup",
+    "bitsandbytes",
+    "chromadb",
+    "docarray",
+    "dotenv",
+    "faiss",
+    "feedparser",
+    "generativeai",
+    "gensim",
+    "ipywidgets",
+    "jupyterlab",
+    "langchain",
+    "llms",
+    "matplotlib",
+    "numpy",
+    "ollama",
+    "plotly",
+    "psutil",
+    "pyarrow",
+    "pydub",
+    "scikit",
+    "scipy",
+    "sentencepiece",
+    "setuptools",
+    "tiktoken",
+    "tqdm",
+    "venv"
+  ]
+}
