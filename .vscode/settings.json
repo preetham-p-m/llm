@@ -17,6 +17,7 @@
     "matplotlib",
     "numpy",
     "ollama",
+    "OPENROUTER",
     "plotly",
     "psutil",
     "pyarrow",
