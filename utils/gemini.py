@@ -2,9 +2,10 @@ import os
 from dotenv import load_dotenv
 from google import genai
 from google.genai.types import Content, Part, GenerateContentConfig
+from ai_agent import AiAgent
 
 
-class Gemini:
+class Gemini(AiAgent):
     def __init__(self):
         load_dotenv()
         self._client = self._initialize_client()
