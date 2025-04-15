@@ -12,6 +12,7 @@
     "gensim",
     "ipywidgets",
     "jupyterlab",
+    "KHTML",
     "langchain",
     "llms",
     "matplotlib",
@@ -29,5 +30,6 @@
     "tiktoken",
     "tqdm",
     "venv"
-  ]
+  ],
+  "jupyter.notebookFileRoot": "${workspaceFolder}"
 }
