@@ -31,5 +31,6 @@
     "tqdm",
     "venv"
   ],
-  "jupyter.notebookFileRoot": "${workspaceFolder}"
+  "jupyter.notebookFileRoot": "${workspaceFolder}",
+  "python.analysis.extraPaths": ["./utils"]
 }
