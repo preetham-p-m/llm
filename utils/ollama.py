@@ -10,16 +10,6 @@ class Ollama(AiAgent):
         self._HEADERS = {"Content-Type": "application/json"}
         self._MODEL = "deepseek-r1:latest"
 
-    def _generate_response(
-        self, system_prompt: str, user_input: str = "", streamed: bool = False
-    ):
-        messages = [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_input},
-        ]
-        payload = {"model": self._MODEL, "messages": messages, "stream": streamed}
-        return requests.post(self._OLLAMA_API, json=payload, headers=self._HEADERS)
-
     def generate_content_stream(self, system_prompt: str, user_input: str = ""):
         return self._generate_response(system_prompt, user_input, streamed=True)
 
@@ -30,3 +20,13 @@ class Ollama(AiAgent):
         jsonContent = result.json()
 
         return jsonContent["message"]["content"]
+
+    def _generate_response(
+        self, system_prompt: str, user_input: str = "", streamed: bool = False
+    ):
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_input},
+        ]
+        payload = {"model": self._MODEL, "messages": messages, "stream": streamed}
+        return requests.post(self._OLLAMA_API, json=payload, headers=self._HEADERS)
