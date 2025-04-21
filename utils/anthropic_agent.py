@@ -16,7 +16,6 @@ class Anthropic(AiAgent):
     def generate_content_stream(self, system_prompt: str, user_input: str = ""):
         messages = (
             [
-                {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_input},
             ],
         )
@@ -24,6 +23,7 @@ class Anthropic(AiAgent):
         return self._client.messages.stream(
             model=self._model,
             max_tokens=1024,
+            system=system_prompt,
             messages=messages,
         )
 
@@ -32,7 +32,6 @@ class Anthropic(AiAgent):
     ):
         messages = (
             [
-                {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_input},
             ],
         )
@@ -40,6 +39,7 @@ class Anthropic(AiAgent):
         return self._client.messages.create(
             model=self._model,
             max_tokens=1024,
+            system=system_prompt,
             messages=messages,
         )
 
