@@ -13,9 +13,7 @@ class Ollama(AiAgent):
     def generate_content_stream(self, system_prompt: str, user_input: str = ""):
         return self._generate_response(system_prompt, user_input, streamed=True)
 
-    def generate_stripped_response_string(
-        self, system_prompt: str, user_input: str = ""
-    ):
+    def generate_content(self, system_prompt: str, user_input: str = ""):
         result = self._generate_response(system_prompt, user_input)
         jsonContent = result.json()
 

@@ -27,9 +27,7 @@ class Anthropic(AiAgent):
             messages=messages,
         )
 
-    def generate_stripped_response_string(
-        self, system_prompt: str, user_input: str = ""
-    ):
+    def generate_content(self, system_prompt: str, user_input: str = ""):
         messages = (
             [
                 {"role": "user", "content": user_input},

@@ -7,7 +7,5 @@ class AiAgent(ABC):
         pass
 
     @abstractmethod
-    def generate_stripped_response_string(
-        self, system_prompt: str, user_input: str = ""
-    ):
+    def generate_content(self, system_prompt: str, user_input: str = ""):
         pass
