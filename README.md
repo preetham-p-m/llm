@@ -16,7 +16,7 @@ This repository contains resources, code, and projects related to learning and b
 
 ### 🎯 PitchCraft – AI Brochure Builder  
 *A Complete Business Solution*  
-📍 Located in: `notebook/pitchcraft.ipynb`
+📍 Located in: `notebook/pitch_craft.ipynb`
 
 #### 🚀 Business Challenge
 
