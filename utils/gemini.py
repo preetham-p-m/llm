@@ -17,21 +17,24 @@ class Gemini(AiAgent):
         ]
         config = self._get_config(system_prompt)
 
-        return self._client.models.generate_content(
+        stream = self._client.models.generate_content_stream(
             model=self._model, contents=messages, config=config
         )
 
-    def generate_stripped_response_string(
-        self, system_prompt: str, user_input: str = ""
-    ):
-        result = self.generate_content_stream(system_prompt, user_input)
+        for chunk in stream:
+            yield chunk.candidates[0].content.parts[0].text or ""
 
-        stream_string = ""
-        for candidate in result.candidates:
-            for part in candidate.content.parts:
-                stream_string += part.text
+    def generate_content(self, system_prompt: str, user_input: str = ""):
+        messages = [
+            Content(role="user", parts=[Part(text=user_input)]),
+        ]
+        config = self._get_config(system_prompt)
 
-        return stream_string
+        result = self._client.models.generate_content(
+            model=self._model, contents=messages, config=config
+        )
+
+        return result.candidates[0].content.parts[0].text
 
     @staticmethod
     def _get_config(system_prompt: str):
