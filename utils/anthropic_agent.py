@@ -1,10 +1,9 @@
 import anthropic
-from ai_agent import AiAgent
 from dotenv import load_dotenv
 import os
 
 
-class Anthropic(AiAgent):
+class Anthropic:
     def __init__(self):
         load_dotenv()
         self._model = "claude-3-7-sonnet-20250219"

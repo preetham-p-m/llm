@@ -1,10 +1,9 @@
 import ollama
-from ai_agent import AiAgent
 import requests
 import json
 
 
-class Ollama(AiAgent):
+class Ollama:
     def __init__(self):
         self._OLLAMA_API = "http://localhost:11434/api/chat"
         self._HEADERS = {"Content-Type": "application/json"}
