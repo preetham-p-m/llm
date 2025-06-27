@@ -16,6 +16,7 @@
     "gensim",
     "Hackathon",
     "Homellm",
+    "hoverinfo",
     "huggingface",
     "IIOTY",
     "inbrowser",
@@ -58,7 +59,12 @@
     "telematics",
     "tiktoken",
     "tqdm",
-    "venv"
+    "tsne",
+    "vectorstore",
+    "venv",
+    "xaxis",
+    "yaxis",
+    "zaxis"
   ],
   "jupyter.notebookFileRoot": "${workspaceFolder}",
   "python.analysis.extraPaths": ["./utils"]
