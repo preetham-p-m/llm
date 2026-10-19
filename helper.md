@@ -1,24 +1,9 @@
-## Setup the conda environment using the yml file
+## Set up the project with uv
 
-```sh
-conda env create -f fileName.yml
+Install uv using the instructions at <https://docs.astral.sh/uv/getting-started/installation/>, then run:
 
-or
-
-conda env create --file=URL
-```
-
-## Creating the similar environment with python virtual env
-
-```sh
-python -m venv llms-env
-
-# Windows
-llms-env\Scripts\activate
-
-# MAC
-source llms-env/bin/activate
-
-# Install everything from the requirements.txt file
-pip install -r requirements.txt
+```bash
+uv python install 3.11
+uv sync
+uv run jupyter lab
 ```
